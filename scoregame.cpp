@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <fstream>
-#include <ctime>;
+#include <ctime>
 
 int main()
 {
@@ -26,7 +26,7 @@ int main()
     std::string welcome_msg = "****Welcome to OnlyEven OddScore game****";
 
     std::cout << welcome_msg;
-    
+
     fin >> high_score;
 
     std::cout << "High Score is " << high_score << std::endl;
@@ -51,12 +51,13 @@ int main()
                 fout.close();
                 remove(highscore);
                 rename(temp_score, highscore);
-                 fin.close();
+                fin.close();
                 fout.close();
+
             }
             std::cout << "You entered an odd number. You lose";
-            status = false; 
+            status = false;
+        }
     }
-
-    return 0;
+        return 0;
 }
