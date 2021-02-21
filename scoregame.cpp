@@ -22,7 +22,7 @@ bool status = true;
 
 char continueToPlay() {
     char option = ' ';
-    std::cout << "\t\t\t\t\t\t\t" <<"Press:  \n\n\t\t\t\t\t\t\t  y to continue \n\n\t\t\t\t\t\t\t\tOR\n \n \t\t\t\t\t\t\t any key to quit";
+    std::cout << "\t\t\t\t\t\t\t" <<"Press:  \n\n\t\t\t\t\t\t\t  y to continue \n\n\t\t\t\t\t\t\t\tOR\n \n \t\t\t\t\t\t\t any key to quit: ";
     std::cin >> option;
     return option;
 }
