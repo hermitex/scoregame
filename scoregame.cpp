@@ -22,7 +22,7 @@ bool status = true;
 
 char continueToPlay() {
     char option = ' ';
-    std::cout << "Press:  \n  y to continue \n\n\tOR\n \n  any key to quit" << std::endl;
+    std::cout << "\t\t\t\t\t\t\t" <<"Press:  \n\n\t\t\t\t\t\t\t  y to continue \n\n\t\t\t\t\t\t\t\tOR\n \n \t\t\t\t\t\t\t any key to quit";
     std::cin >> option;
     return option;
 }
@@ -45,21 +45,21 @@ void updateHighScore(int high_score, int score) {
 
 void play() {
     if (!(std::cin >> num)) {
-        std::cout << "\n\a *************************************\n" << std::endl;
-        std::cout << "Error! Whole Numbers Only Allowed!\n";
-        std::cout << "\n *************************************\n\a" << std::endl;
+        std::cout << "\t\t\t\t\t\t\t*****************************************\n" << std::endl;
+        std::cout << "\t\t\t\t\t\t\t  Error! Whole Numbers Only Allowed!\n";
+        std::cout << "\n\t\t\t\t\t\t\t*****************************************\n\a" << std::endl;
         status = false;
     }
     else {
         if (num % 2 == 0) {
             score += 2;
-            std::cout << "You get 2 points. New score is: " << score << std::endl;
+            std::cout << "\t\t\t\t\t\t\tYou get 2 points. New score is: " << score << std::endl;
         }
         else {
             updateHighScore(high_score, score);
-            std::cout << "\n *************************************\n" << std::endl;
-            std::cout << "You entered an odd number. Game Over!" << std::endl;
-            std::cout << "\n *************************************\n" << std::endl;
+            std::cout << "\n \t\t\t\t\t\t*************************************\n" << std::endl;
+            std::cout << "\t\t\t\t\t\tYou entered an odd number. Game Over!" << std::endl;
+            std::cout << "\n\t\t\t\t\t\t *************************************\n" << std::endl;
             if (tolower(continueToPlay()) == 'y') {
                 updateHighScore(high_score, score);
                 if (score > high_score) {
@@ -70,7 +70,12 @@ void play() {
                     fin >> high_score;
                 }
                 score = 0;
-                std::cout << "High Score is " << high_score << std::endl;
+                std::cout << "\t\t\t\t\t\t\t" << "........................." << std::endl;               
+                std::cout << "\t\t\t\t\t\t\t" << std::endl;
+                std::cout << "\t\t\t\t\t\t\t* ";
+                std::cout << "  High Score is " << high_score << "\t*";               
+                std::cout << "\t\t\t\t\t\t\t" << std::endl;           
+                std::cout << "\t\t\t\t\t\t\t" << "........................." << std::endl;
                 status = true;
             }
             else {
@@ -89,16 +94,21 @@ int main()
 
     fin.open(highscore);
 
-    std::string welcome_msg = "****Welcome to OnlyEven OddScore Game****\n";
+    std::string welcome_msg = "\t\t\t\t\t\t****Welcome to OnlyEven OddScore Game****\n\n";
 
     std::cout << welcome_msg;
 
     fin >> high_score;
 
-    std::cout << "\nHigh Score is " << high_score << std::endl;
+    std::cout << "\t\t\t\t\t\t\t" << "........................." << std::endl;
+    std::cout << "\t\t\t\t\t\t\t" << std::endl;
+    std::cout << "\t\t\t\t\t\t\t* ";
+    std::cout << "  High Score is " << high_score << "\t*";
+    std::cout << "\t\t\t\t\t\t\t" << std::endl;
+    std::cout << "\t\t\t\t\t\t\t" << "........................." << std::endl;
 
     while (status) {
-        std::cout << "\nEnter a number to play: ";
+        std::cout << "\n\t\t\t\t\t\t\t" << "Enter a number to play: ";
         play();
 
     }
